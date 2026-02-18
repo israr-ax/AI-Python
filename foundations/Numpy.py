@@ -48,3 +48,15 @@ print(f"Print last three elements: {Narr[-3:]}")
 
 # Print every second element
 print(f"Print every second element: {Narr[0:5:2]}")
+
+
+arr = np.array([[10,20,30],
+                [40,50,60],
+                [70,80,90]])
+
+# Get middle element Get first two rows & last two column
+
+print(f"Get Center element: {arr[1,1]}")
+print(f"Get first two rows & last two column:{arr[0:2,1:3]} ")
+print(f"Get first Row:{arr[0]} ")
+print(f"Get Second Column:{arr[:,1]} ")
