@@ -81,3 +81,27 @@ print(arr * arr2)
 
 arr=np.array([10,20,30,40])
 print(f"{arr} \nMultiply by 2. :{arr * 2} \nTotal Sum of an array:{np.sum(arr)} \nMean of an array: {np.mean(arr)} ")
+
+'''  _________________________________________________
+    | Topic 4: Reshaping, Stacking & Splitting Arrays |
+    |_________________________________________________|'''
+    
+
+# Reshape [1,2,3,4] into 2x2
+arr=np.array([1,2,3,4])
+new_arr=arr.reshape(2,2)
+print(f"Before Reshape: {arr} \nAfter Reshape: {new_arr}")
+
+# Stack [1,2] and [3,4] vertically and Horizantally
+a=np.array([1,2])
+b=np.array([3,4])
+print(f"Vertical Stack: {np.vstack((a,b))} \nHorizantal Stack: {np.hstack((a,b))}")
+
+
+# Split [10,20,30,40] into 2 parts
+arr=np.array([10,20,30,40])
+print(np.split(arr,2))
+
+
+
+ 
