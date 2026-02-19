@@ -19,7 +19,6 @@ Find average price Filter products with price > 500
 Add new column: Total = Price * Quantity '''
 
 # Create a DataFrame with: Product,Price ,Quantity
-
 data={
     'Product': ['Soap', 'Facewash', 'Detergent', 'Shampoo'],
     'Price' :  [210,450,550,870],
@@ -33,3 +32,32 @@ print(f"Average Price:{df['Price'].mean()} \nFilter products with price:\n{df[df
 # Add new column: Total = Price * Quantity
 df['TOTAL'] = df['Price'] * df['Quantity']
 print(df)
+
+
+'''Create a DataFrame with:
+Product Price Quantity (one missing value)
+Then:
+Detect missing values
+Fill with mean
+Print cleaned DataFrame '''
+
+# '''Create a DataFrame with: Product Price Quantity 
+data={
+    'Product': ['Soap', 'Facewash', 'Detergent', 'Shampoo'],
+    'Price' :  [210,450,None,870],
+    'Quantity': [6,None,3,12]
+}
+df=pd.DataFrame(data)
+print(df)
+
+# Detect missing values
+print(f"Detect missing values:\n {df.isnull()}")
+
+# Fill with mean
+df.fillna({
+    'Price': df['Price'].mean(),
+    'Quantity': df['Quantity'].mean()
+}, inplace=True)
+
+# Print cleaned DataFrame
+print(f"Fill mising values:\n{df}")
