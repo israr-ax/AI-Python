@@ -33,7 +33,6 @@ print(f"Average Price:{df['Price'].mean()} \nFilter products with price:\n{df[df
 df['TOTAL'] = df['Price'] * df['Quantity']
 print(df)
 
-
 '''Create a DataFrame with:
 Product Price Quantity (one missing value)
 Then:
@@ -61,3 +60,29 @@ df.fillna({
 
 # Print cleaned DataFrame
 print(f"Fill mising values:\n{df}")
+
+'''
+    Converting Pandas → NumPy
+'''
+# Create DataFrame
+data = {
+    "Experience": [1,2,3,4,5,6],
+    "Hours_Studied": [2,4,5,8,10,6],
+    "Pass": [0,0,1,1,1,6]
+}
+df=pd.DataFrame(data)
+print(df)
+
+# Separate X and y
+X=df[["Experience","Hours_Studied"]]
+Y=df["Pass"]
+
+# Convert to NumPy
+X=X.values
+Y=Y.values
+print(type(X))
+print(type(Y))
+
+# Print shapes
+print(X.shape)
+print(Y.shape)
