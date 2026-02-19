@@ -86,3 +86,43 @@ print(type(Y))
 # Print shapes
 print(X.shape)
 print(Y.shape)
+
+'''
+Create a dataset of:Student Name Study Hours Sleep Hours Pass (0/1)
+Then:
+Handle missing values (if any)
+Select features only numeric
+Convert to NumPy
+Print shape
+
+'''
+# Create a dataset of:Student Name Study Hours Sleep Hours Pass (0/1)
+data={
+    "Name":['Israr','Dheeraj','Pawan','Aman'],
+    'Study Hours':[None,3,6,8],
+    'Sleep Hours':[12,9,8,15],
+    'Pass':[0,1,0,1]
+}
+df=pd.DataFrame(data)
+print(df)
+
+# Handle missing values (if any)
+print("Detect missing values\n",df.isnull())
+df['Study Hours']=df['Study Hours'].fillna(df['Study Hours'].mean())
+print("Handle missing values\n",df)
+
+# Select features only numeric
+''' X=Input(Features)
+    Y=Output (Label)
+'''
+X=df[['Study Hours','Sleep Hours']]  
+y= df['Pass']
+
+# Convert to NumPy
+X=X.values
+y=y.values
+print(f"Convert from Pandas To Numpy\n {type(X)} , {type(y)}")
+
+# Print shape
+print(X.shape)
+print(y.shape)
