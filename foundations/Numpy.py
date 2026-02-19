@@ -103,5 +103,22 @@ arr=np.array([10,20,30,40])
 print(np.split(arr,2))
 
 
+''' Create array [1..12]
+Reshape to 3x4
+Flatten back
+Split into 3 arrays '''
+
+
+# Reshape to 3x4
+arr=np.array([1,2,3,4,5,6,7,8,9,10,11,12])
+new=arr.reshape(3,4)
+print(f"Before Reshape: {arr} \nAfter Reshape: {new}")
+
+# Flatten back
+flat=new.flatten()
+print("Flatten back",flat)
+
+# Split into 3 arrays
+print(np.split(arr,3))
 
  
